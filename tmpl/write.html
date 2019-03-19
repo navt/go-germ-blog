@@ -1,0 +1,26 @@
+{{ define "write" }}
+{{ template "header" }}
+<!-- <div class="container">   ушёл в header                                 -->
+  <div class="row">
+    <div class="two columns">&nbsp;</div>
+      <div class="eight columns" style="margin-top: 2%">
+        <form class="" action="/save" method="post">
+          <input type="hidden" name="id" value="{{.Id}}">
+          <label>Title</label>
+          <input class="u-full-width" type="text" name="title" value="{{.Title}}">
+          <label>Description</label>
+          <textarea class="u-full-width" name="description" >{{.Description}}</textarea>
+          <label>Content</label>
+          <textarea class="u-full-width" name="content">{{.Content}}</textarea>
+          <button type="submit" name="button" value="Submit">Запомнить</button>
+        </form>
+      </div>
+    <div class="two columns">
+      {{ if .Id}}
+        <a class="button" href="/delete?id={{.Id}}">Удалить</a>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ template "footer" }}
+{{ end }}

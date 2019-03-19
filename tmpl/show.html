@@ -1,0 +1,10 @@
+{{ define "show" }}
+{{ template "header" .}}
+<!-- <div class="container">   ушёл в header                                 -->
+  <div class="row">
+    <h4>{{.Title}}</h4>
+    <p>{{.Content}}</p>
+  </div>
+</div>
+{{ template "footer" }}
+{{ end }}
