@@ -3,24 +3,14 @@
 <!-- <div class="container"> Primary Page Layout  –––––––––––––––––––––––––– -->
   {{ range $key, $value := . }}
   <div class="row">
-    <div class="two columns">&nbsp;</div>
-      <div class="eight columns" style="margin-top: 2%">
-        <div class="seven columns">
-          <h4>{{ $value.Title}}</h4>
-        </div>
-        <div class="one column">
-          <a href="/write?id={{ $key }}">Редактировать</a>
-        </div>
-      </div>
-    <div class="two columns">&nbsp;</div>
+    <h4>{{ $value.Title}}</h4>
   </div>
   <div class="row">
-    <div class="two columns">&nbsp;</div>
-      <div class="eight columns" >
-        {{ $value.Description }}
-        <p><a href="/show?id={{ $key }}">Подробнее &rarr;</a></p>
-      </div>
-    <div class="two columns">&nbsp;</div>
+    {{ $value.Description }}
+    <p>
+      <a href="/show?id={{ $key }}">Подробнее &rarr;</a>
+      <a style="float: right;" href="/write?id={{ $key }}">Редактировать &rarr;</a>
+    </p>
   </div>
   {{ end }}
 </div><!-- End Document   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
